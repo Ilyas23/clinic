@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+
+html, body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif; */
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout transitions */
+.layout-enter-active, .layout-leave-active {
+  transition: opacity 0.5s;
+}
+.layout-enter, .layout-leave-active {
+  opacity: 0;
+}
+
+/* Page transitions */
+.page-enter-active, .page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+}
+
+.mb{
+  margin-bottom: 1rem;
+}
+
+.mb2{
+  margin-bottom: 2rem;
+}
+
+.color{
+  color: #2a7db0;
+}
+
