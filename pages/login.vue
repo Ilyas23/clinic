@@ -32,6 +32,9 @@
 
 <script>
 export default {
+  head: {
+    title: 'Главная'
+  },
   data() {
     return {
       loading: false,
