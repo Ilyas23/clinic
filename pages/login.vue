@@ -90,6 +90,6 @@ export default {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding-top: 4rem;
+    padding-top: 7rem;
   }
 </style>

@@ -1,14 +1,9 @@
 <template>
   <transition name="layout" mode="out-in">
-    <el-container>
-      <el-header>
-        <app-navigation />
-      </el-header>
-      <el-main>
-        <nuxt />
-      </el-main>
-      <el-footer></el-footer>
-    </el-container>
+    <div>
+      <app-navigation />
+      <nuxt />
+    </div>
   </transition>
 </template>
 
@@ -30,8 +25,3 @@ export default {
   }
 }
 </script>
-
-
-<style>
-
-</style>

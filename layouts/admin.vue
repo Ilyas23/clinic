@@ -1,19 +1,11 @@
 <template>
   <transition name="layout" mode="out-in">
-    <div class="admin-layout">
-      <el-container :style="{height: '100%'}">
-        <el-header :style="{padding: '0'}">
-          <app-navigation/>
-        </el-header>
-        <el-container>
-          <el-aside width="266px">
-            <app-aside />
-          </el-aside>
-          <el-main>
-            <nuxt/>
-          </el-main>
-        </el-container>
-      </el-container>
+    <div>
+      <app-navigation/>
+      <div class="admin-layout">
+        <app-aside />
+        <nuxt/>
+      </div>
     </div>
   </transition>
 </template>
@@ -42,7 +34,7 @@ export default {
 <style scoped>
   .admin-layout{
     width: 100%;
-    height: 100vh;
+    display: flex;
   }
 </style>
 

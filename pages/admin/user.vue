@@ -1,33 +1,31 @@
 <template>
-  <div class="login">
-    <el-card
-      :style="{width: '400px'}"
+  <el-card
+    class="card"
+  >
+    <h1 style="text-align: center; font-size: 25px;">Создать пользователя</h1>
+    <el-form
+      :rules="rules"
+      @submit.native.prevent="onSubmit"
+      ref="form"
+      :model="form"
+      label-width="80px"
     >
-      <h1 style="text-align: center;">Создать пользователя</h1>
-      <el-form
-        :rules="rules"
-        @submit.native.prevent="onSubmit"
-        ref="form"
-        :model="form"
-        label-width="80px"
-      >
-        <el-form-item style="margin-top: 2rem;" prop="login" label="Логин">
-          <el-input v-model="form.login"/>
-        </el-form-item>
-        <el-form-item prop="password" label="Пароль">
-          <el-input type="password" v-model="form.password"/>
-        </el-form-item>
-        
-        <el-form-item>
-          <el-button
-            type="primary"
-            :loading="loading"
-            native-type="submit"
-          >Создать</el-button>
-        </el-form-item>
-      </el-form>
-    </el-card>
-  </div>
+      <el-form-item style="margin-top: 2rem;" prop="login" label="Логин">
+        <el-input style="width: 250px;" v-model="form.login"/>
+      </el-form-item>
+      <el-form-item prop="password" label="Пароль">
+        <el-input style="width: 250px;" type="password" v-model="form.password"/>
+      </el-form-item>
+      
+      <el-form-item>
+        <el-button
+          type="primary"
+          :loading="loading"
+          native-type="submit"
+        >Создать</el-button>
+      </el-form-item>
+    </el-form>
+  </el-card>
 </template>
 
 <script>
@@ -73,10 +71,9 @@ export default {
 </script>
 
 <style scoped>
-  .login{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding-top: 4rem;
+  .card{
+    width: 400px;
+    height: 300px;
+    margin: 7rem auto 0;
   }
 </style>

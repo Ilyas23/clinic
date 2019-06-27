@@ -3,7 +3,7 @@
     ref="form"
     :model="form"
     :rules="rules"
-    @submit.native.prevent="onSubmit"  
+    @submit.native.prevent="onSubmit"
   >
 
     <h1 class="mb">Редактировать новость</h1>
@@ -99,7 +99,8 @@ export default {
 </script>
 
 <style scoped>
- form{
-   width: 600px;
- }
+  form{
+    width: 600px;
+    margin: 5rem auto 0;
+  }
 </style>

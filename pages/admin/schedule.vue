@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1 style="text-align: center; margin-bottom: 1rem;">Расписание врачей</h1>
+  <div class="schedule">
+    <h1>Расписание врачей</h1>
     <el-table
       highlight-current-row
       :border="true"
@@ -86,7 +86,7 @@
       </el-table-column>
     </el-table>
     <el-button
-      style="margin-top: 2rem;"
+      style="margin: 1rem;"
       type="primary" v-text="'Добавить врача'"
       @click="addRow"
     />
@@ -125,3 +125,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .schedule{
+    width: 80%;
+  }
+  h1{
+    text-align: center;
+    margin: 4rem 0 1rem;
+  }
+</style>

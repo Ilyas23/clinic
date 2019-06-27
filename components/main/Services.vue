@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-top: 2rem;">
+  <div class="service">
     <h1 style="text-align: center; color: #2a7db0;">Услуги</h1>
     <el-card class="wrap">
       <ol>
@@ -20,9 +20,13 @@ export default {
 </script>
 
 <style scoped>
+  .service{
+    padding-top: 4rem;
+  }
+
   .wrap{
     width: 50%;
-    margin: 2rem auto 0;
+    margin: 2rem auto -2rem;
   }
 
   .wrap ol {
@@ -44,7 +48,13 @@ export default {
     color: #ccc;
   }
 
-  @media only screen and (max-width: 944px) {
+  @media only screen and (max-width: 942px) {
+    .wrap{
+      width: 500px;
+    }
+  }
+
+  @media only screen and (max-width: 550px) {
     .wrap{
       width: 100%;
     }

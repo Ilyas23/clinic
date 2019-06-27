@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <h1 class="color" style="text-align: center; margin-bottom: 2rem">Записаться на прием</h1>
+    <h1 class="color" style="text-align: center; margin-bottom: 2rem;">Записаться на прием</h1>
     <el-form
       :rules="rules"
       @submit.native.prevent="onSubmit"
       class="form"
       ref="form"
       :model="form"
-      label-width="200px"
+      label-width="210px"
     >
 
       <el-form-item prop="name" label="ФИО">
@@ -109,7 +109,7 @@ export default {
 
 <style scoped>
   .container{
-    margin-top: 10px;
+    padding-top: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,6 +118,18 @@ export default {
 
   .form{
     width: 50%;
-    margin-right: 150px;
+    margin-right: 198px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .form{
+      width: 60%;
+    }
+  }
+
+  @media only screen and (max-width: 790px) {
+    .container{
+      padding-top: 1rem;;
+    }
   }
 </style>

@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <h1 style="margin-bottom: 1rem;">Список услуг</h1>
+  <div class="service">
+    <h1>Список услуг</h1>
     <el-table
       highlight-current-row
       :border="true"
       :data="service"
-      style="width: 50%"
+      style="margin: 0 auto; width: 70%;"
     >
       <el-table-column
         prop="title"
@@ -43,11 +43,13 @@
         </template>
       </el-table-column>
     </el-table>
-    <el-button
-      style="margin-top: 2rem;"
-      type="primary" v-text="'Добавить услугу'"
-      @click="addRow"
-    />
+    <div class="button">
+      <el-button
+        style="margin: 2rem auto;"
+        type="primary" v-text="'Добавить услугу'"
+        @click="addRow"
+      />
+    </div>
   </div>
 </template>
 
@@ -83,3 +85,20 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .service{
+    width: 80%;
+    height: auto;
+  }
+
+  h1{
+    margin: 4rem 0 2rem;
+    text-align: center;
+  }
+
+  .button{
+    display: flex;
+    justify-content: center;
+  }
+</style>

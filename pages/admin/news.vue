@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <h1 style="margin-bottom: 1rem;">Новости</h1>
+  <div class="news">
+    <h1 class="mb">Новости</h1>
     <el-table
       highlight-current-row
       :border="true"
       :data="news"
-      style="width: 50%"
+      style="width: 50%; margin: 0 auto;"
     >
       <el-table-column
         prop="title"
@@ -83,3 +83,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .news{
+    width: 80%;
+    margin-top: 5rem;
+    text-align: center;
+  }
+</style>

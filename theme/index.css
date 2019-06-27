@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
+@font-face{
+  src: url('../fonts/NotoSerif-Regular.ttf');
+  font-family: 'Noto Serif';
+}
 * {
   margin: 0;
   padding: 0;
@@ -6,13 +9,11 @@
   text-decoration: none;
 }
 
-
 html, body{
   margin: 0;
   padding: 0;
   height: 100%;
-  /* font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif; */
-  font-family: 'Noto Serif', serif;
+  font-family: 'Noto Serif';
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
@@ -44,4 +45,3 @@ html, body{
 .color{
   color: #2a7db0;
 }
-

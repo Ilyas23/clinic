@@ -1,17 +1,13 @@
 const pkg = require('./package')
 
-
 module.exports = {
   mode: 'universal',
 
-  server: {
-    port: 8000,
-    host: '95.59.24.139'
-  },
+  // server: {
+  //   port: 8000,
+  //   host: '95.59.24.139'
+  // },
 
-  /*
-  ** Headers of the page
-  */
   head: {
     title: 'Клиника',
     meta: [
@@ -24,60 +20,42 @@ module.exports = {
     ]
   },
 
-  /*
-  ** Customize the progress-bar color
-  */
   loading: { color: '#409EFF' },
 
-  /*
-  ** Global CSS
-  */
   css: [
     'element-ui/lib/theme-chalk/index.css',
     '@/theme/index.css'
   ],
 
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [
     '@/plugins/globals',
     '@/plugins/axios'
   ],
 
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/moment'
+    ['@nuxtjs/moment', { locales: ['ru'], defaultLocale: 'ru' }]
   ],
   /*
   ** Axios module configuration
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    // proxy: true
+    proxy: true
   },
 
-  // proxy: {
-  //   '/api/': 'http://aman-medicus.kz'
+  proxy: {
+    '/api/': 'http://aman-medicus.kz'
+  },
+
+  // moment: {
+  //   locales: ['ru']
   // },
 
-  moment: {
-    
-  },
-
-  /*
-  ** Build configuration
-  */
   build: {
     transpile: [/^element-ui/],
-    
-    /*
-    ** You can extend webpack config here
-    */
+
     extend(config, ctx) {
     }
   }

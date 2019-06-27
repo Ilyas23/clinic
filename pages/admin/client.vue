@@ -1,9 +1,8 @@
 <template>
-  <div>
-    <h1 style="text-align: center; margin-bottom: 1rem;">Список приемов</h1>
+  <div class="client">
+    <h1>Список приемов</h1>
     <el-table
       :data="patient"
-      style="width: 95%"
     >
       <el-table-column type="expand">
         <template slot-scope="props">
@@ -90,7 +89,6 @@ export default {
       item.date = $moment(item.date).locale('ru').format('LL')
       item.time = $moment(item.time).locale('ru').format('LT')
     })
-    console.log(patient[0].date)
     return {patient}
   },
   methods: {
@@ -114,3 +112,15 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .client{
+    width: 70%;
+    margin: 4rem auto;
+  }
+
+  h1{
+    margin: 0 auto 1rem;
+    text-align: center;
+  }
+</style>

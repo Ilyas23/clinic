@@ -1,13 +1,8 @@
 <template>
   <div class="news">
-    <el-breadcrumb class="mb" separator="/">
-      <el-breadcrumb-item to="/">Главная</el-breadcrumb-item>
-      <el-breadcrumb-item to="/news">Новости</el-breadcrumb-item>
-      <el-breadcrumb-item>{{news.title}}</el-breadcrumb-item>
-    </el-breadcrumb>
     <div class="container">
       <h1 class="mb">{{news.title}}</h1>
-      <img class="mb" style="width: 50%; height: auto;" :src="news.imageUrl" alt="">
+      <img class="mb" :src="news.imageUrl" alt="">
       <vue-markdown class="mb">{{news.text}}</vue-markdown>
     </div>
   </div>
@@ -27,10 +22,30 @@ export default {
   .news{
     width: 77%;
     margin: 0 auto;
+    padding-top: 4rem;
   }
   .container{
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  img{
+    width: 75%;
+  }
+
+  @media only screen and (max-width: 790px) {
+    .news{
+      padding-top: 1rem;
+    }
+    img{
+      width: 90%;
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    img{
+      width: 100%;
+    }
   }
 </style>

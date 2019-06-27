@@ -1,48 +1,119 @@
 <template>
-  <el-carousel class="slider"  height="450px">
-    <el-carousel-item class="num">
-      <img src="https://misanec.ru/wp-content/uploads/2018/10/2650299.jpg" alt="">
-    </el-carousel-item >
-    <el-carousel-item class="num">
-      <img src="https://gorlozdorovo.ru/wp-content/uploads/2015/06/doktor-1024x676.jpg" alt="">
-    </el-carousel-item>
-    <el-carousel-item class="num">
-      <img src="https://clipart-db.ru/file_content/rastr/doctor-010.png" alt="">
-    </el-carousel-item>
-  </el-carousel>
+  <div class="slider">
+    <div class="carousel">
+      <img class="slideImg" :src="path" alt="" />
+      <button @click="leftHandler" class="left"> &#9668; </button>
+      <button @click="rigthHandler" class="rigth"> &#9658; </button>
+    </div>
+  </div>
 </template>
 
+<script>
+export default {
+  data(){
+    return {
+      path: '2650299.jpg',
+      photos: ['2650299.jpg', 'doktor-1024x676.jpg', 'doctor-010.png'],
+      number: 0,
+      slideImg: null
+    }
+  },
+  mounted() {
+    this.slideImg = document.getElementsByClassName('slideImg')[0].style
+  },
+  methods: {
+    leftHandler(){
+      if(this.number === 0){
+        this.path = this.photos[this.photos.length-1]
+        this.number = this.photos.length - 1
+      } else if(this.number === this.photos.length-1){
+        this.number--
+        this.path = this.photos[this.number]
+      } else {
+        this.number--
+        this.path = this.photos[this.number]
+      }
+    },
+    rigthHandler(){
+      if(this.number === 0){
+        this.number++
+        this.path = this.photos[this.number]
+      } else if(this.number === this.photos.length - 1){
+        this.path = this.photos[0]
+        this.number = 0
+      } else {
+        this.number++
+        this.path = this.photos[this.number]
+      }
+    }
+  }
+}
+</script>
+
 <style scoped>
-  .num{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  img{
-    height: 100%;
-  }
-
   .slider{
     width: 75%;
-    margin: 0 auto;
+    margin: 0 auto -2rem;
   }
 
-  @media only screen and (max-width: 942px) {
+  .carousel{
+    height: 100%;
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .slideImg{
+    height: 500px;
+    transition: all .5s;
+  }
+
+  button{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 39px;
+    border-radius: 50px;
+    border: none;
+    background: rgba(170, 144, 144, 0.288);
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    color: #fff;
+    transition: .5s;
+  }
+
+  button:hover{
+    background: rgba(92, 73, 73, 0.288);
+    cursor: pointer;
+    transition: .5s;
+  }
+
+  .left{
+    left: 10%;
+  }
+
+  .rigth{
+    right: 10%;
+  }
+
+  @media only screen and (max-width: 860px) {
     .slider{
-      margin-top: 4rem;
+      width: 90%;
+    }
+
+    .slideImg{
+      height: auto;
     }
   }
 
-  @media only screen and (max-width: 540px) {
+  @media only screen and (max-width: 790px) {
     .slider{
-      margin-top: 7rem;
+      width: 100%;
     }
-  }
 
-  @media only screen and (max-width: 449px) {
-    .slider{
-      margin-top: 11rem;
+    .carousel{
+      padding-top: 2rem;
     }
   }
 </style>

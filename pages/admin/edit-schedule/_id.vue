@@ -1,14 +1,9 @@
 <template>
-  <div>
-    <el-breadcrumb separator="/">
-      <el-breadcrumb-item to="/admin/schedule">График</el-breadcrumb-item>
-      <el-breadcrumb-item>{{schedule.name}}</el-breadcrumb-item>
-    </el-breadcrumb>
-
+  <div class="edit">
     <el-table
       :border="true"
       :data="[row]"
-      style="width: 100%; margin: 2rem 0;"
+      style="width: 100%;"
     >
       <el-table-column
         prop="doctor"
@@ -78,6 +73,7 @@
       @click="save"
       type="success"
       :loading="loading"
+      style="margin: 1rem;"
     >Сохранить</el-button>
   </div>
 </template>
@@ -117,3 +113,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .edit{
+    width: 80%;
+    margin-top: 5rem;
+  }
+</style>

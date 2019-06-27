@@ -4,7 +4,7 @@
     :model="form"
     :rules="rules"
     @submit.native.prevent="save"
-    style="width: 50%;"
+    style="width: 50%; margin: 4rem auto 0;"
   >
 
     <h1 class="mb">Редактирование записи приема пациента</h1>
