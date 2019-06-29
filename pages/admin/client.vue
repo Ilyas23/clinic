@@ -81,6 +81,9 @@
 
 <script>
 export default {
+  head: {
+    title: `Запись пациентов | ${process.env.appName}`
+  },
   layout: 'admin',
   middleware: ['admin-auth'],
   async asyncData({store, $moment}){

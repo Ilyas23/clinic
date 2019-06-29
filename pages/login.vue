@@ -33,7 +33,7 @@
 <script>
 export default {
   head: {
-    title: 'Главная'
+    title: `Войти | ${process.env.appName}`
   },
   data() {
     return {

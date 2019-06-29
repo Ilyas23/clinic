@@ -53,6 +53,9 @@
 
 <script>
 export default {
+  head: {
+    title: `Новости | ${process.env.appName}`
+  },
   layout: 'admin',
   middleware: ['admin-auth'],
   async asyncData({store}){

@@ -7,6 +7,9 @@
 <script>
 import AppNews from '@/components/main/Post'
 export default {
+  head: {
+    title: `Новости | ${process.env.appName}`
+  },
   components: {
     AppNews
   },

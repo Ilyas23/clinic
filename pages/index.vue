@@ -11,6 +11,9 @@ import AppCarousel from '@/components/main/Carousel'
 import AppServices from '@/components/main/Services'
 import AppPost from '@/components/main/Post'
 export default {
+  head: {
+    title: `Главная | ${process.env.appName}`
+  },
   components: {
     AppCarousel,
     AppServices,
@@ -23,6 +26,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>

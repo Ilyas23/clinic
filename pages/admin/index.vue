@@ -4,6 +4,9 @@
 
 <script>
 export default {
+  head: {
+    title: `Админ панель | ${process.env.appName}`
+  },
   layout: 'admin',
   middleware: ['admin-auth']
 }

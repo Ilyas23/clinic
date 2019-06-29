@@ -7,6 +7,9 @@
 <script>
 import AppServices from '@/components/main/Services'
 export default {
+  head: {
+    title: `Услуги | ${process.env.appName}`
+  },
   components: {
     AppServices
   },

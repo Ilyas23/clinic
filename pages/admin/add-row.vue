@@ -1,10 +1,5 @@
 <template>
-  <div>
-    <el-breadcrumb separator="/">
-      <el-breadcrumb-item to="/admin/schedule">График</el-breadcrumb-item>
-      <el-breadcrumb-item>Добавить врача</el-breadcrumb-item>
-    </el-breadcrumb>
-
+  <div class="table-admin">
     <el-table
       :border="true"
       :data="[row]"
@@ -78,12 +73,16 @@
       @click="addRow"
       type="success"
       :loading="loading"
+      style="margin-left: 1rem;"
     >Добавить</el-button>
   </div>
 </template>
 
 <script>
 export default {
+  head: {
+    title: `Добавить врача | ${process.env.appName}`
+  },
   layout: 'admin',
   middleware: ['admin-auth'],
   data(){
@@ -113,3 +112,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .table-admin{
+    width: 80%;
+    margin-top: 1rem;
+  }
+</style>

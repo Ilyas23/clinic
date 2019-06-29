@@ -14,6 +14,11 @@
 
 <script>
 export default {
+  head(){
+    return {
+      title: `${this.service.title} | ${process.env.appName}`
+    }
+  },
   async asyncData({store, params}){
     const service = await store.dispatch('service/fetchServiceById', params.id)
     return {service}

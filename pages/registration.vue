@@ -60,6 +60,9 @@
 
 <script>
 export default {
+  head: {
+    title: `Записаться на прием | ${process.env.appName}`
+  },
   data() {
     return {
       loading: false,

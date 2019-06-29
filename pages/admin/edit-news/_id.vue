@@ -49,6 +49,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: `Редактировать новость | ${process.env.appName}`
+    }
+  },
   layout: 'admin',
   middleware: ['admin-auth'],
   async asyncData({store, params}){

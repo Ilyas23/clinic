@@ -95,6 +95,9 @@
 
 <script>
 export default {
+  head: {
+    title: `Расписание врачей | ${process.env.appName}`
+  },
   layout: 'admin',
   middleware: ['admin-auth'],
   async asyncData({store}){

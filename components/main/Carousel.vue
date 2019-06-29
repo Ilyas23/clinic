@@ -12,8 +12,8 @@
 export default {
   data(){
     return {
-      path: '2650299.jpg',
-      photos: ['2650299.jpg', 'doktor-1024x676.jpg', 'doctor-010.png'],
+      path: 'slide_1.jpg',
+      photos: ['slide_1.jpg', 'slide_2.jpg', 'slide_3.png'],
       number: 0,
       slideImg: null
     }
@@ -61,6 +61,7 @@ export default {
     padding-top: 5rem;
     display: flex;
     justify-content: center;
+    position: relative;
   }
 
   .slideImg{

@@ -1,5 +1,6 @@
 <template>
   <el-form
+    class="form"
     ref="form"
     :model="form"
     :rules="rules"
@@ -62,6 +63,9 @@
 
 <script>
 export default {
+  head: {
+    title: `Добавить услугу | ${process.env.appName}`
+  },
   layout: 'admin',
   middleware: ['admin-auth'],
   data(){
@@ -117,7 +121,8 @@ export default {
 </script>
 
 <style scoped>
- form{
-   width: 600px;
- }
+  form{
+    width: 600px;
+    margin: 4rem auto 0;
+  }
 </style>

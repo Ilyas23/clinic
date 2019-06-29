@@ -10,6 +10,11 @@
 
 <script>
 export default {
+  head(){
+    return {
+      title: `${this.news.title} | ${process.env.appName}`
+    }
+  },
   async asyncData({store, params}){
     const news = await store.dispatch('news/fetchNewsById', params.id)
     return {news}

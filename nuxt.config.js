@@ -8,6 +8,14 @@ module.exports = {
   //   host: '95.59.24.139'
   // },
 
+  axios: {
+    proxy: true
+  },
+
+  proxy: {
+    '/api/': 'http://aman-medicus.kz'
+  },
+
   head: {
     title: 'Клиника',
     meta: [
@@ -33,25 +41,13 @@ module.exports = {
   ],
 
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     ['@nuxtjs/moment', { locales: ['ru'], defaultLocale: 'ru' }]
   ],
-  /*
-  ** Axios module configuration
-  */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-    proxy: true
-  },
 
-  proxy: {
-    '/api/': 'http://aman-medicus.kz'
+  env: {
+    appName: 'Aman-Medicus'
   },
-
-  // moment: {
-  //   locales: ['ru']
-  // },
 
   build: {
     transpile: [/^element-ui/],

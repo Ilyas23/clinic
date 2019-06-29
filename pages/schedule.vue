@@ -58,6 +58,9 @@
 
 <script>
 export default {
+  head: {
+    title: `Расписание врачей | ${process.env.appName}`
+  },
   async asyncData({store}){
     const schedule = await store.dispatch('schedule/fetchClientSchedule')
     return {schedule}

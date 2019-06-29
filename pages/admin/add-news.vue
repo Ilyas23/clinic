@@ -1,6 +1,7 @@
 <template>
   <el-form
     ref="form"
+    class="form"
     :model="form"
     :rules="rules"
     @submit.native.prevent="onSubmit"  
@@ -62,6 +63,9 @@
 
 <script>
 export default {
+  head: {
+    title: `Добавить новость | ${process.env.appName}`
+  },
   layout: 'admin',
   middleware: ['admin-auth'],
   data(){
@@ -117,7 +121,8 @@ export default {
 </script>
 
 <style scoped>
- form{
-   width: 600px;
- }
+  form{
+    width: 600px;
+    margin: 4rem auto 0;
+  }
 </style>
